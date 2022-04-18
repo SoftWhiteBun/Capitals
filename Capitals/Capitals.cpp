@@ -48,7 +48,7 @@ int main()
 	int q;
 	cin >> q;
 	for (int i = 0; i < q; i++)
-	{
+	{ /////////////////////////////////////////////////
 		string operation;
 		cin >> operation;
 		if (operation == "CHANGE_CAPITAL") ChangeCapital(Guide);
