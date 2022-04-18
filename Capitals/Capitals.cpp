@@ -40,24 +40,29 @@ void ChangeCapital(map<string, string>& guide);
 void Rename(map<string, string>& guide);
 void About(map<string, string>& guide);
 void Dump(const map<string, string>& guide);
+void Info();
 map<string, string> Reverse(const map<string, string> guide);
+
 
 int main()
 {
 	map<string, string> Guide;
-	int q;
-	cin >> q;
-	for (int i = 0; i < q; i++)
-	{ /////////////////////////////////////////////////
+	bool Exit = false;
+	Info();
+	while (!Exit)
+	{ 
 		string operation;
 		cin >> operation;
-		if (operation == "CHANGE_CAPITAL") ChangeCapital(Guide);
-		if (operation == "RENAME") Rename(Guide);
-		if (operation == "ABOUT") About(Guide);
-		if (operation == "DUMP") Dump(Guide);
+		if (operation == "1") ChangeCapital(Guide);
+		if (operation == "2") Rename(Guide);
+		if (operation == "3") About(Guide);
+		if (operation == "4") Dump(Guide);
+		if (operation == "5") Info();
+		if (operation == "6") Exit = true;
 	}
 	return 0;
 }
+
 
 map<string, string> Reverse(const map<string, string> guide)
 {
@@ -135,4 +140,12 @@ void Dump(const map<string, string> &guide)
 	}
 }
 
-
+void Info() {
+	cout << "Для выбора действия введите:" << endl;
+	cout << "Изменить столицу или создать новую страну - 1" << endl;
+	cout << "Переименовать страну - 2" << endl;
+	cout << "Узнать столицу страны - 3" << endl;
+	cout << "Вывести всю информацию о странах и столицах - 4" << endl;
+	cout << "Помощь - 5" << endl;
+	cout << "Завершение работы - 6" << endl;
+}
